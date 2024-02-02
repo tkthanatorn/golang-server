@@ -16,7 +16,7 @@ func main() {
 	app.Use(cors.New())
 
 	app.Get("", func(c *fiber.Ctx) error {
-		return c.SendStatus(fiber.StatusOK)
+		return c.Status(fiber.StatusOK).SendString("Hello, Gopher!!")
 	})
 
 	app.Get("/health", monitor.New())
